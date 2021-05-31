@@ -1,8 +1,8 @@
 *NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
 
-# Your Project Title Here
+# CAPTSONE PROJECT AZURE MACHINE LEARNING ENGINEER
 
-*TODO:* Write a short introduction to your project.
+This is the capstone project for the Azure Machine Learning Engineer where we put it all together and combine Machine Learning through the Azure platform to deploy a model.
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
@@ -10,6 +10,36 @@
 ## Dataset
 
 ### Overview
+The dataset explored for this project is the Adult dataset, which is a banking classification problem trying to identify whether or not an individal earns more than 50k.
+
+https://archive.ics.uci.edu/ml/datasets/Adult
+
+
+Variable |Datatype|Description
+-|-|-
+
+
+age	Integer	Age
+workclass	Object	
+fnlwgt	Numerical	Final Weight
+education	Object	Education Level
+education-num.	Integer	Number of years of education in total
+marital-status	Object	Marital Status
+occupation	Object	Occuptation, Employment
+relationship	Object	
+race	Object	Race
+sex	Object	Gender
+capital-gain	Numerical	Income (gain) from Investment Sources
+capital-loss	Numerical	Income (loss) from Investment Sources
+hours-per-week	Numerical	
+native-country	Object	Country Born
+wage-outcome	Object	Outcome, dependent variable
+
+https://www.kaggle.com/andrewmvd/heart-failure-clinical-data 
+
+
+
+
 *TODO*: Explain about the data you are using and where you got it from.
 
 ### Task
