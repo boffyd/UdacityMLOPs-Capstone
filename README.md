@@ -10,21 +10,23 @@ This is the capstone project for the Azure Machine Learning Engineer where we pu
 ## Dataset
 
 ### Overview
-The dataset explored for this project is the Adult dataset, which is a banking classification problem trying to identify whether or not an individal earns more than 50k.
+The dataset explored for this project is the Adult dataset, which is a banking classification problem trying to identify whether or not an individal earns more than 50k.  It consists of 14 Variables and 1 target variable (wage-outcome).  The file location can be found as per the below weblink.
 
 https://archive.ics.uci.edu/ml/datasets/Adult
 
 
+The variables are: 
+
 Variable |Datatype|Description
 -|-|-
 age|Integer|Age
-workclass|Object|	
+workclass|Object|	Working Class
 fnlwgt|Numerical|Final Weight
 education|Object|Education Level
 education-num.|Integer|Number of years of education in total
 marital-status|Object|Marital Status
 occupation|Object|Occuptation, Employment
-relationship|Object	
+relationship|Object|Relationship
 race|Object|Race
 sex|Object|Gender
 capital-gain|Numerical|Income (gain) from Investment Sources
@@ -35,10 +37,6 @@ wage-outcome|Object|Outcome, dependent variable
 
 https://www.kaggle.com/andrewmvd/heart-failure-clinical-data 
 
-
-
-
-*TODO*: Explain about the data you are using and where you got it from.
 
 ### Task
 *TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
