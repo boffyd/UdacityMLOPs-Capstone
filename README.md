@@ -17,23 +17,21 @@ https://archive.ics.uci.edu/ml/datasets/Adult
 
 Variable |Datatype|Description
 -|-|-
-
-
-age	Integer	Age
-workclass	Object	
-fnlwgt	Numerical	Final Weight
-education	Object	Education Level
-education-num.	Integer	Number of years of education in total
-marital-status	Object	Marital Status
-occupation	Object	Occuptation, Employment
-relationship	Object	
-race	Object	Race
-sex	Object	Gender
-capital-gain	Numerical	Income (gain) from Investment Sources
-capital-loss	Numerical	Income (loss) from Investment Sources
-hours-per-week	Numerical	
-native-country	Object	Country Born
-wage-outcome	Object	Outcome, dependent variable
+age|Integer|Age
+workclass|Object|	
+fnlwgt|Numerical|Final Weight
+education|Object|Education Level
+education-num.|Integer|Number of years of education in total
+marital-status|Object|Marital Status
+occupation|Object|Occuptation, Employment
+relationship|Object	
+race|Object|Race
+sex|Object|Gender
+capital-gain|Numerical|Income (gain) from Investment Sources
+capital-loss|Numerical|Income (loss) from Investment Sources
+hours-per-week|Numerical	
+native-country|Object|Country Born
+wage-outcome|Object|Outcome, dependent variable
 
 https://www.kaggle.com/andrewmvd/heart-failure-clinical-data 
 
