@@ -3,7 +3,7 @@
 This is the capstone project for the Azure Machine Learning Engineer where we put it all together and combine Machine Learning through the Azure platform to deploy a model.
 
 ## Project Set Up and Installation
-*OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
+Firstly to run models and environments in Azure you need a login.  In this case the UDACITY VM access point is used with a predifined login and access to compute resources.
 
 ## Dataset
 
