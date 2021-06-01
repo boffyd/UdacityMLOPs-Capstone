@@ -16,7 +16,7 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 run = Run.get_context()
 
-def clean_data2(data):
+def clean_data(data):
     #import data, this has already been looked at and inspected.
     #define the header names
     df = pd.read_csv(data,
@@ -42,6 +42,7 @@ def clean_data2(data):
     #race is dominated by one race
     #native country is dominated by one country, which is in the same currency as the target
     #first filter by this then drop
+    df = df.to_pandas_dataframe().dropna()
     df[df['native-country'].str.contains("United States")]
     #drop unwanted variables as mentioned above.
     df = df.drop(columns=['workclass','education','race','native-country','fnlwgt'])
@@ -69,7 +70,6 @@ def clean_data2(data):
     
     return x_df,y_df #one output
 
-#Create TabularDataset using TabularDatasetFactory
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
 
 #  read remote URL data to DataFrame
