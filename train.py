@@ -1,4 +1,3 @@
-from sklearn.linear_model import LogisticRegression
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import mean_squared_error
@@ -67,14 +66,14 @@ def clean_data(data):
                             'capital-loss',
                             'hours-per-week'
                            ])
-    #y_df = df.wage-outcome
     
     return x_df,y_df #one output
 
+#  read remote URL data to DataFrame
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
 
-#  read remote URL data to DataFrame
 
+# pass url to Tabular dataset.  Note this is different to pandas dataframe, and gets converted to a dataframe in the function.
 ds = TabularDatasetFactory.from_delimited_files(url,header = False)
    
 # clean data and create x and y sets            
@@ -89,14 +88,14 @@ def main():
     # Add arguments to script
     parser = argparse.ArgumentParser()
   
-    parser.add_argument('--max_depth', type=int, default=3, help="maximum depth of each tree that limits number of nodes")
+    parser.add_argument('--max_depth', type=int, default=5, help="maximum depth of each tree")
     parser.add_argument('--learning_rate', type=float, default=0.1, help="Factor by which each tree's contribution shrinks")
     
-
     args = parser.parse_args()
 
-    model = XGBClassifier(max_depth=args.max_depth, learning_rate=args.learning_rate).fit(x_train, y_train)
-  
+    model = XGBClassifier(max_depth=args.max_depth, learning_rate=args.learning_rate)
+    model.fit(x_train,y_train)
+    
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
     run.log("Max depth:", np.float(args.max_depth))
