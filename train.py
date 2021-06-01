@@ -13,36 +13,36 @@ from sklearn.preprocessing import LabelEncoder
 import pandas as pd
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
+from azureml.data.dataset_factory import DataType
+from azureml.core import Dataset
 
 run = Run.get_context()
 
 def clean_data(data):
     #import data, this has already been looked at and inspected.
     #define the header names
-    df = pd.read_csv(data,
-                   sep=',',
-                   header=None,
-                   names=['age',
-                          'workclass',
-                          'fnlwgt',
-                          'education',
-                          'education-num.',
-                          'marital-status',
-                          'occupation',
-                          'relationship',
-                          'race',
-                          'sex',
-                          'capital-gain',
-                          'capital-loss',
-                          'hours-per-week',
-                          'native-country',
-                          'wage-outcome'])
-    #Feature engineering look to drop correlated (i.e. education and education number features)
+    
+    df = data.to_pandas_dataframe().dropna()
+    df.columns = [  'age',
+                    'workclass',
+                    'fnlwgt',
+                    'education',
+                    'education-num.',
+                    'marital-status',
+                    'occupation',
+                    'relationship',
+                    'race',
+                    'sex',
+                    'capital-gain',
+                    'capital-loss',
+                    'hours-per-week',
+                    'native-country',
+                    'wage-outcome']
+    #Feature engineering look to drop correlated (i.e. education and education number features)    
     #Working class no obvious difference in categories
     #race is dominated by one race
     #native country is dominated by one country, which is in the same currency as the target
     #first filter by this then drop
-    df = df.to_pandas_dataframe().dropna()
     df[df['native-country'].str.contains("United States")]
     #drop unwanted variables as mentioned above.
     df = df.drop(columns=['workclass','education','race','native-country','fnlwgt'])
@@ -73,7 +73,8 @@ def clean_data(data):
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
 
 #  read remote URL data to DataFrame
-ds = TabularDatasetFactory.from_delimited_files(url)
+
+ds = TabularDatasetFactory.from_delimited_files(url,header = False)
    
 # clean data and create x and y sets            
 
@@ -93,10 +94,6 @@ def main():
 
     args = parser.parse_args()
 
-    run.log("Regularization Strength:", np.float(args.C))
-    run.log("Max iterations:", np.int(args.max_iter))
-
-    #model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
     model = XGBClassifier(max_depth=args.max_depth, learning_rate=args.learning_rate).fit(x_train, y_train)
   
     accuracy = model.score(x_test, y_test)
