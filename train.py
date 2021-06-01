@@ -43,7 +43,8 @@ def clean_data(data):
     #race is dominated by one race
     #native country is dominated by one country, which is in the same currency as the target
     #first filter by this then drop
-    df[df['native-country'].str.contains("United States")]
+    
+    #df[df['native-country'].str.contains("United States")]
     #drop unwanted variables as mentioned above.
     df = df.drop(columns=['workclass','education','race','native-country','fnlwgt'])
     
