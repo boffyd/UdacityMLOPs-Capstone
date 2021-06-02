@@ -21,60 +21,50 @@ def clean_data(data):
     #import data, this has already been looked at and inspected.
     #define the header names
     
-    df = data.to_pandas_dataframe().dropna()
-    df.columns = [  'age',
-                    'workclass',
-                    'fnlwgt',
-                    'education',
-                    'education-num.',
-                    'marital-status',
-                    'occupation',
-                    'relationship',
-                    'race',
-                    'sex',
-                    'capital-gain',
-                    'capital-loss',
-                    'hours-per-week',
-                    'native-country',
-                    'wage-outcome']
-    #Feature engineering look to drop correlated (i.e. education and education number features)    
+    df = data.dropna()
+     #Feature engineering look to drop correlated (i.e. education and education number features)    
     #Working class no obvious difference in categories
     #race is dominated by one race
     #native country is dominated by one country, which is in the same currency as the target
     #first filter by this then drop
     
-    #df[df['native-country'].str.contains("United States")]
+    df[df['native-country'].str.contains("United States")]
     #drop unwanted variables as mentioned above.
-    df = df.drop(columns=['workclass','education','race','native-country','fnlwgt'])
+    df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
     
     #Encode categorical variables, for simplicity Label Encoding is used.
     le = LabelEncoder()
     for col in df.columns:
         if df[col].dtypes =='object':
             df[col] = le.fit_transform(df[col])
-    
-    x_df = df
-    #x_df = df.drop("wage-outcome", inplace=True, axis=1)
-    x_df = df.drop(columns=['wage-outcome'])
-    y_df = df.drop(columns=['age',
-                            'education-num.',
-                            'marital-status',
-                            'occupation',
-                            'relationship',
-                            'sex',
-                            'capital-gain',
-                            'capital-loss',
-                            'hours-per-week'
-                           ])
+    x_df = df.drop(columns=['wage'])
+    y_df = df['wage']
     
     return x_df,y_df #one output
 
+
+#Import data
 #  read remote URL data to DataFrame
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
+##url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
 
 
 # pass url to Tabular dataset.  Note this is different to pandas dataframe, and gets converted to a dataframe in the function.
-ds = TabularDatasetFactory.from_delimited_files(url,header = False)
+#ds = TabularDatasetFactory.from_delimited_files(url,header = False)
+
+
+
+# azureml-core of version 1.0.72 or higher is required
+# azureml-dataprep[pandas] of version 1.1.34 or higher is required
+from azureml.core import Workspace, Dataset
+
+subscription_id = 'f9d5a085-54dc-4215-9ba6-dad5d86e60a0'
+resource_group = 'aml-quickstarts-146358'
+workspace_name = 'quick-starts-ws-146358'
+
+workspace = Workspace(subscription_id, resource_group, workspace_name)
+
+dataset = Dataset.get_by_name(workspace, name='Adult')
+ds = dataset.to_pandas_dataframe()
    
 # clean data and create x and y sets            
 
