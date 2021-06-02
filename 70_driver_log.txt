@@ -1,0 +1,37 @@
+2021/06/02 10:17:16 Starting App Insight Logger for task:  runTaskLet
+2021/06/02 10:17:16 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/info
+2021/06/02 10:17:16 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
+[2021-06-02T10:17:16.400270] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--learning_rate', '1', '--max_depth', '2'])
+Script type = None
+[2021-06-02T10:17:17.667831] Entering Run History Context Manager.
+[2021-06-02T10:17:18.537318] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146358/azureml/hd_6b514a77-0cf9-473a-8f4e-49a650b84ca8_0/mounts/workspaceblobstore/azureml/HD_6b514a77-0cf9-473a-8f4e-49a650b84ca8_0
+[2021-06-02T10:17:18.537616] Preparing to call script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '2']
+[2021-06-02T10:17:18.537686] After variable expansion, calling script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '2']
+
+
+
+[2021-06-02T10:17:18.551666] The experiment failed. Finalizing run...
+Cleaning up all outstanding Run operations, waiting 900.0 seconds
+1 items cleaning up...
+Cleanup took 0.06571698188781738 seconds
+Traceback (most recent call last):
+  File "train.py", line 1, in <module>
+    from xgboost import XGBClassifier
+ModuleNotFoundError: No module named 'xgboost'
+
+[2021-06-02T10:17:18.827028] Finished context manager injector with Exception.
+2021/06/02 10:17:19 Skipping parsing control script error. Reason: Error json file doesn't exist. This most likely means that no errors were written to the file. File path: /mnt/batch/tasks/workitems/99d243b7-ec56-4639-affa-9e35c0b3be0b/job-1/hd_6b514a77-0cf9-473_800aaaa4-8d4e-401d-90d8-66feb57d7ab1/wd/runTaskLetTask_error.json
+2021/06/02 10:17:19 Failed to run the wrapper cmd with err: exit status 1
+2021/06/02 10:17:19 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
+2021/06/02 10:17:19 mpirun version string: {
+Intel(R) MPI Library for Linux* OS, Version 2018 Update 3 Build 20180411 (id: 18329)
+Copyright 2003-2018 Intel Corporation.
+}
+2021/06/02 10:17:19 MPI publisher: intel ; version: 2018
+2021/06/02 10:17:19 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 3
+FilteredData: 0.
+2021/06/02 10:17:19 Process Exiting with Code:  1
+2021/06/02 10:17:20 All App Insights Logs was send successfully
