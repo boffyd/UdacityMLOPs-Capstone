@@ -86,10 +86,10 @@ def main():
     model = XGBClassifier(max_depth=args.max_depth, learning_rate=args.learning_rate)
     model.fit(x_train,y_train)
     
-    accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", np.float(accuracy))
-    run.log("Max depth:", np.float(args.max_depth))
-    run.log("Learning rate:", np.int(args.learning_rate))
+    Accuracy = model.score(x_test, y_test)
+    run.log("Accuracy", np.float(Accuracy))
+    #run.log("Max depth:", np.float(args.max_depth))
+    #run.log("Learning rate:", np.int(args.learning_rate))
     
     os.makedirs('outputs', exist_ok = True)
     joblib.dump(value = model, filename = './outputs/best_hyperdrive_model.joblib')
