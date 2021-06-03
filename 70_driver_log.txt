@@ -1,37 +1,124 @@
-2021/06/02 10:17:16 Starting App Insight Logger for task:  runTaskLet
-2021/06/02 10:17:16 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/info
-2021/06/02 10:17:16 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
-[2021-06-02T10:17:16.400270] Entering context manager injector.
-[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--learning_rate', '1', '--max_depth', '2'])
+2021/06/03 09:21:31 Starting App Insight Logger for task:  runTaskLet
+2021/06/03 09:21:31 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/info
+2021/06/03 09:21:31 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+[2021-06-03T09:21:32.615803] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--learning_rate', '10', '--max_depth', '2'])
 Script type = None
-[2021-06-02T10:17:17.667831] Entering Run History Context Manager.
-[2021-06-02T10:17:18.537318] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146358/azureml/hd_6b514a77-0cf9-473a-8f4e-49a650b84ca8_0/mounts/workspaceblobstore/azureml/HD_6b514a77-0cf9-473a-8f4e-49a650b84ca8_0
-[2021-06-02T10:17:18.537616] Preparing to call script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '2']
-[2021-06-02T10:17:18.537686] After variable expansion, calling script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '2']
+[2021-06-03T09:21:33.994612] Entering Run History Context Manager.
+[2021-06-03T09:21:34.696563] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146436/azureml/hd_0350da8f-c82d-489b-8632-5aaef27a3f9d_2/mounts/workspaceblobstore/azureml/HD_0350da8f-c82d-489b-8632-5aaef27a3f9d_2
+[2021-06-03T09:21:34.696907] Preparing to call script [train.py] with arguments:['--learning_rate', '10', '--max_depth', '2']
+[2021-06-03T09:21:34.696980] After variable expansion, calling script [train.py] with arguments:['--learning_rate', '10', '--max_depth', '2']
+
+2021/06/03 09:21:36 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+Stopped: false
+OriginalData: 1
+FilteredData: 0.
+Performing interactive authentication. Please follow the instructions on the terminal.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code FXJ8P2J97 to authenticate.
 
 
-
-[2021-06-02T10:17:18.551666] The experiment failed. Finalizing run...
+[2021-06-03T09:36:52.390588] The experiment failed. Finalizing run...
 Cleaning up all outstanding Run operations, waiting 900.0 seconds
-1 items cleaning up...
-Cleanup took 0.06571698188781738 seconds
+2 items cleaning up...
+Cleanup took 0.14491915702819824 seconds
 Traceback (most recent call last):
-  File "train.py", line 1, in <module>
-    from xgboost import XGBClassifier
-ModuleNotFoundError: No module named 'xgboost'
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 579, in perform_interactive_login
+    use_cert_sn_issuer=use_cert_sn_issuer)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 228, in find_subscriptions_on_login
+    tenant, self._ad_resource_uri)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 801, in find_through_interactive_flow
+    token_entry = context.acquire_token_with_device_code(resource, code, _CLIENT_ID)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/adal/authentication_context.py", line 311, in acquire_token_with_device_code
+    return self._acquire_token(token_func, user_code_info.get('correlation_id', None))
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/adal/authentication_context.py", line 128, in _acquire_token
+    return token_func(self)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/adal/authentication_context.py", line 304, in token_func
+    token = token_request.get_token_with_device_code(user_code_info)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/adal/token_request.py", line 394, in get_token_with_device_code
+    token = client.get_token_with_polling(oauth_parameters, interval, expires_in)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/adal/oauth2_client.py", line 362, in get_token_with_polling
+    wire_response)
+adal.adal_error.AdalError: Unexpected polling state code_expired
 
-[2021-06-02T10:17:18.827028] Finished context manager injector with Exception.
-2021/06/02 10:17:19 Skipping parsing control script error. Reason: Error json file doesn't exist. This most likely means that no errors were written to the file. File path: /mnt/batch/tasks/workitems/99d243b7-ec56-4639-affa-9e35c0b3be0b/job-1/hd_6b514a77-0cf9-473_800aaaa4-8d4e-401d-90d8-66feb57d7ab1/wd/runTaskLetTask_error.json
-2021/06/02 10:17:19 Failed to run the wrapper cmd with err: exit status 1
-2021/06/02 10:17:19 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
-2021/06/02 10:17:19 mpirun version string: {
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146436/azureml/hd_0350da8f-c82d-489b-8632-5aaef27a3f9d_2/mounts/workspaceblobstore/azureml/HD_0350da8f-c82d-489b-8632-5aaef27a3f9d_2/azureml-setup/context_manager_injector.py", line 234, in execute_with_context
+    runpy.run_path(sys.argv[0], globals(), run_name="__main__")
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/runpy.py", line 263, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/runpy.py", line 96, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "train.py", line 64, in <module>
+    workspace = Workspace(subscription_id, resource_group, workspace_name)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/core/workspace.py", line 193, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/core/authentication.py", line 523, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException('Unknown error occurred during authentication. Error detail: ' + str(err))
+azureml.exceptions._azureml_exception.AuthenticationException: AuthenticationException:
+	Message: Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "inner_error": {
+            "code": "Authentication"
+        },
+        "message": "Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired"
+    }
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "train.py", line 64, in <module>
+    workspace = Workspace(subscription_id, resource_group, workspace_name)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/core/workspace.py", line 193, in __init__
+    auth = InteractiveLoginAuthentication()
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/core/authentication.py", line 523, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException('Unknown error occurred during authentication. Error detail: ' + str(err))
+UserScriptException: UserScriptException:
+	Message: Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired
+	InnerException AuthenticationException:
+	Message: Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "inner_error": {
+            "code": "Authentication"
+        },
+        "message": "Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired"
+    }
+}
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired"
+    }
+}
+
+[2021-06-03T09:36:52.755078] Finished context manager injector with Exception.
+2021/06/03 09:36:53 Skipping parsing control script error. Reason: Error json file doesn't exist. This most likely means that no errors were written to the file. File path: /mnt/batch/tasks/workitems/59e381ad-e44b-4855-afe5-b095bcf66b99/job-1/hd_0350da8f-c82d-489_6db357cd-d720-40ec-adab-380b66d1fa45/wd/runTaskLetTask_error.json
+2021/06/03 09:36:53 Failed to run the wrapper cmd with err: exit status 1
+2021/06/03 09:36:53 Attempt 1 of http call to http://10.0.0.4:16384/sendlogstoartifacts/status
+2021/06/03 09:36:53 mpirun version string: {
 Intel(R) MPI Library for Linux* OS, Version 2018 Update 3 Build 20180411 (id: 18329)
 Copyright 2003-2018 Intel Corporation.
 }
-2021/06/02 10:17:19 MPI publisher: intel ; version: 2018
-2021/06/02 10:17:19 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+2021/06/03 09:36:53 MPI publisher: intel ; version: 2018
+2021/06/03 09:36:53 Not exporting to RunHistory as the exporter is either stopped or there is no data.
 Stopped: false
-OriginalData: 3
+OriginalData: 2
 FilteredData: 0.
-2021/06/02 10:17:19 Process Exiting with Code:  1
-2021/06/02 10:17:20 All App Insights Logs was send successfully
+2021/06/03 09:36:53 Process Exiting with Code:  1
+2021/06/03 09:36:54 All App Insights Logs was send successfully
