@@ -17,7 +17,7 @@ key = 'DTZ5maZzybrVdf6N4Nj1LvUaLHe9mUw0'
 # a simple way to find out how to interact with the model is to download the deployed model endpoint swagger ui (swagger.json)
 # file into a swagger directory with the swagger.sh and serve.py python script.  The serve.py script allows the swagger run
 # to access the local directory and enables access tl localhost:9000 and http://localhost:8000/swagger.json.  This will provide 
-# examples of outputs which the below input data needs to match.
+# examples of outputs which the below input data needs to match (post method)
 
 df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
 
