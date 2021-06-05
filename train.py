@@ -14,8 +14,11 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.data.dataset_factory import DataType
 from azureml.core import Dataset
+from azureml.core import Workspace
 
 run = Run.get_context()
+ws = run.experiment.workspace
+
 
 def clean_data(data):
     #import data, this has already been looked at and inspected.
