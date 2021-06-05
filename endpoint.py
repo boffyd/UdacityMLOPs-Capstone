@@ -3,11 +3,21 @@ import json
 
 # URL for the web service, should be similar to:
 # 'http://8530a665-66f3-49c8-a953-b82a2d312917.eastus.azurecontainer.io/score'
+# scoring_uri and key are found in the deployed model data and allow any api/web interface to access as req'd.
 scoring_uri = 'http://a32db088-5669-4c6d-8ed6-09c8eac8a3af.southcentralus.azurecontainer.io/score'
 # If the service is authenticated, set the key or token
 key = 'DTZ5maZzybrVdf6N4Nj1LvUaLHe9mUw0'
 
+# Endpoint.py is used to pass new data to the scoring uri as defined by the deployed model.  
+#The format has to be in the format (wrangled,pipeline) as per the orignal model input
 # Two sets of data to score, so we get two results back
+
+# in the case of this dataset the original file included passing it through clean data, and the finalised clean data
+# needs to be passed through to this model.  It is then encoded, again we need to pass new encoded information through.
+
+df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
+
+# define data as required for the model.
 data = {"data":
         [
           {
