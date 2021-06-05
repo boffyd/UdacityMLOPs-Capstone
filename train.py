@@ -66,11 +66,11 @@ url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult
 
 from azureml.core import Workspace, Dataset
 
-subscription_id = 'a0a76bad-11a1-4a2d-9887-97a29122c8ed'
-resource_group = 'aml-quickstarts-146592'
-workspace_name = 'quick-starts-ws-146592'
+#subscription_id = 'a0a76bad-11a1-4a2d-9887-97a29122c8ed'
+#resource_group = 'aml-quickstarts-146592'
+#workspace_name = 'quick-starts-ws-146592'
 
-workspace = Workspace(subscription_id, resource_group, workspace_name)
+#workspace = Workspace(subscription_id, resource_group, workspace_name)
 
 dataset = Dataset.get_by_name(workspace, name='Adult')
 ds = dataset.to_pandas_dataframe()

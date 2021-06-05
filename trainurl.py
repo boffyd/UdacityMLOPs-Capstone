@@ -30,10 +30,10 @@ def clean_data(data):
     #Working class no obvious difference in categories
     #native country is dominated by one country, which is in the same currency as the target
     
-    df[df['native-country'].str.contains("United States")]
+    #df = df[df['native-country'].str.contains("United States")]
     
     #drop unwanted variables
-    df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
+    df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column1'])
     
     #Encode categorical variables, for simplicity Label Encoding is used.
     le = LabelEncoder()
@@ -57,8 +57,8 @@ url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult
 
 # pass url to Tabular dataset.  Note this is different to pandas dataframe, and gets converted to a dataframe in the function.
 
-dataset = TabularDatasetFactory.from_delimited_files(url,header = False)
-ds = dataset.to_pandas_dataframe()
+dataset = TabularDatasetFactory.from_delimited_files(url,header = True)
+ds = dataset.to_pandas_dataframe().dropna()
 
 # Access uploaded csv from datablob (azure storage by accessing dataset and copying the consume details)
 # azureml-core of version 1.0.72 or higher is required
