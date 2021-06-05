@@ -1,5 +1,5 @@
 # Run the swagger-ui project locally, requires docker to be installed and running
-# Will pull the latest swagger-ui docker image and then will try to run it on port 80
+# Will pull the latest swagger-ui docker image and then will try to run it on port 9000
 #
 # Once running, it is accessible at: http://localhost/
 #
