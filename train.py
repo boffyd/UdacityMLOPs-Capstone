@@ -57,15 +57,15 @@ def clean_data(data):
 # azureml-dataprep[pandas] of version 1.1.34 or higher is required
 from azureml.core import Workspace, Dataset
 
-subscription_id = 'f9d5a085-54dc-4215-9ba6-dad5d86e60a0'
-resource_group = 'aml-quickstarts-146358'
-workspace_name = 'quick-starts-ws-146358'
+subscription_id = 'a24a24d5-8d87-4c8a-99b6-91ed2d2df51f'
+resource_group = 'aml-quickstarts-146487'
+workspace_name = 'quick-starts-ws-146487'
 
 workspace = Workspace(subscription_id, resource_group, workspace_name)
 
 dataset = Dataset.get_by_name(workspace, name='Adult')
 ds = dataset.to_pandas_dataframe()
-   
+
 # clean data and create x and y sets            
 
 x, y = clean_data(ds)
