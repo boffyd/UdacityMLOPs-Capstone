@@ -17,7 +17,7 @@ from azureml.core import Dataset
 from azureml.core import Workspace
 
 run = Run.get_context()
-#ws = run.experiment.workspace #req'd for authentication for accessing local storage ie. blobstore
+ws = run.experiment.workspace #req'd for authentication for accessing local storage ie. blobstore
 
 
 def clean_data(data):
