@@ -17,14 +17,14 @@ from azureml.core import Dataset
 from azureml.core import Workspace
 
 run = Run.get_context()
-ws = run.experiment.workspace #req'd for authentication for accessing local storage ie. blobstore
+#ws = run.experiment.workspace #req'd for authentication for accessing local storage ie. blobstore
 
 
 def clean_data(data):
     #drop nas, need to work as a dataframe, can be handled before or in function
 
     #df = data.to_pandas_dataframe().dropna #comment out as req'd
-    df = data.dropna() #comment out as req'd needed for blobstore
+    df = data.dropna() #comment out as req'd needed for blobstore, keep if passing a dataframe pandas
     
     #Feature engineering look to drop unneeded features (i.e. education and education = correlation)    
     #Working class no obvious difference in categories
@@ -57,23 +57,23 @@ url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult
 
 # pass url to Tabular dataset.  Note this is different to pandas dataframe, and gets converted to a dataframe in the function.
 
-# dataset = TabularDatasetFactory.from_delimited_files(url,header = False)
-# ds = dataset.to_pandas_dataframe()
+dataset = TabularDatasetFactory.from_delimited_files(url,header = False)
+ds = dataset.to_pandas_dataframe()
 
 # Access uploaded csv from datablob (azure storage by accessing dataset and copying the consume details)
 # azureml-core of version 1.0.72 or higher is required
 # azureml-dataprep[pandas] of version 1.1.34 or higher is required
 
-from azureml.core import Workspace, Dataset
+#from azureml.core import Workspace, Dataset
 
-subscription_id = 'a24a24d5-8d87-4c8a-99b6-91ed2d2df51f'
-resource_group = 'aml-quickstarts-146487'
-workspace_name = 'quick-starts-ws-146487'
+#subscription_id = 'a24a24d5-8d87-4c8a-99b6-91ed2d2df51f'
+#resource_group = 'aml-quickstarts-146487'
+#workspace_name = 'quick-starts-ws-146487'
 
-workspace = Workspace(subscription_id, resource_group, workspace_name)
+#workspace = Workspace(subscription_id, resource_group, workspace_name)
 
-dataset = Dataset.get_by_name(workspace, name='Adult')
-ds = dataset.to_pandas_dataframe()
+#dataset = Dataset.get_by_name(workspace, name='Adult')
+#ds = dataset.to_pandas_dataframe()
 
 # clean data and create x and y sets            
 
