@@ -14,7 +14,7 @@ from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 from azureml.data.dataset_factory import DataType
 from azureml.core import Dataset
-from azureml.core import Workspace
+from azureml.core import Workspace, Experiment
 
 run = Run.get_context()
 ws = run.experiment.workspace #req'd for authentication for accessing local storage ie. blobstore
@@ -30,10 +30,10 @@ def clean_data(data):
     #Working class no obvious difference in categories
     #native country is dominated by one country, which is in the same currency as the target
     
-    df[df['native-country'].str.contains("United States")]
+    #df[df['native-country'].str.contains("United States")]
     
     #drop unwanted variables
-    df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
+    df = df.drop(columns=['workclass','education','race','fnlwgt','Column2'])
     
     #Encode categorical variables, for simplicity Label Encoding is used.
     le = LabelEncoder()
@@ -66,9 +66,9 @@ url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult
 
 from azureml.core import Workspace, Dataset
 
-subscription_id = 'a24a24d5-8d87-4c8a-99b6-91ed2d2df51f'
-resource_group = 'aml-quickstarts-146487'
-workspace_name = 'quick-starts-ws-146487'
+subscription_id = 'a0a76bad-11a1-4a2d-9887-97a29122c8ed'
+resource_group = 'aml-quickstarts-146592'
+workspace_name = 'quick-starts-ws-146592'
 
 workspace = Workspace(subscription_id, resource_group, workspace_name)
 
