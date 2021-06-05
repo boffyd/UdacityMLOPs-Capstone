@@ -14,6 +14,10 @@ key = 'DTZ5maZzybrVdf6N4Nj1LvUaLHe9mUw0'
 
 # in the case of this dataset the original file included passing it through clean data, and the finalised clean data
 # needs to be passed through to this model.  It is then encoded, again we need to pass new encoded information through.
+# a simple way to find out how to interact with the model is to download the deployed model endpoint swagger ui (swagger.json)
+# file into a swagger directory with the swagger.sh and serve.py python script.  The serve.py script allows the swagger run
+# to access the local directory and enables access tl localhost:9000 and http://localhost:8000/swagger.json.  This will provide 
+# examples of outputs which the below input data needs to match.
 
 df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
 
