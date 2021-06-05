@@ -17,22 +17,22 @@ from azureml.core import Dataset
 from azureml.core import Workspace
 
 run = Run.get_context()
-ws = run.experiment.workspace
+#ws = run.experiment.workspace #req'd for authentication for accessing local storage ie. blobstore
 
 
 def clean_data(data):
-    #import data, this has already been looked at and inspected.
-    #define the header names
+    #drop nas, need to work as a dataframe, can be handled before or in function
+
+    #df = data.to_pandas_dataframe().dropna #comment out as req'd
+    df = data.dropna() #comment out as req'd needed for blobstore
     
-    df = data.dropna()
-     #Feature engineering look to drop correlated (i.e. education and education number features)    
+    #Feature engineering look to drop unneeded features (i.e. education and education = correlation)    
     #Working class no obvious difference in categories
-    #race is dominated by one race
     #native country is dominated by one country, which is in the same currency as the target
-    #first filter by this then drop
     
     df[df['native-country'].str.contains("United States")]
-    #drop unwanted variables as mentioned above.
+    
+    #drop unwanted variables
     df = df.drop(columns=['workclass','education','race','native-country','fnlwgt','Column2'])
     
     #Encode categorical variables, for simplicity Label Encoding is used.
@@ -47,17 +47,23 @@ def clean_data(data):
 
 
 #Import data
+# Several options available, comment out as req'd
 #  read remote URL data to DataFrame
 ##url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data"
 
+# file uploaded to github
+# requires going to the csv accessing raw content and copying url
+url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult.csv'
 
 # pass url to Tabular dataset.  Note this is different to pandas dataframe, and gets converted to a dataframe in the function.
-#ds = TabularDatasetFactory.from_delimited_files(url,header = False)
 
+# dataset = TabularDatasetFactory.from_delimited_files(url,header = False)
+# ds = dataset.to_pandas_dataframe()
 
-
+# Access uploaded csv from datablob (azure storage by accessing dataset and copying the consume details)
 # azureml-core of version 1.0.72 or higher is required
 # azureml-dataprep[pandas] of version 1.1.34 or higher is required
+
 from azureml.core import Workspace, Dataset
 
 subscription_id = 'a24a24d5-8d87-4c8a-99b6-91ed2d2df51f'
