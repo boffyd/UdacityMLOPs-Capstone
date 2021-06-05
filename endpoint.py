@@ -26,10 +26,10 @@ data = {"data":
         [
           {
             "age": 45,
-            "education": 10,
-            "marital-status": 92.893,
-            "occupation": "cellular",
-            "relationship": "mon",
+            "education-num": 10,
+            "marital-status": 2,
+            "occupation": "6",
+            "relationship": "0",
             "sex": 1,
             "capital-gain": 2000,
             "capital-loss": 0,
@@ -37,11 +37,11 @@ data = {"data":
           },
           {
             "age": 25,
-            "education": 10,
-            "marital-status": 92.893,
-            "occupation": "cellular",
-            "relationship": "mon",
-            "sex": 2,
+            "education-num": 2,
+            "marital-status": 0,
+            "occupation": "2",
+            "relationship": "4",
+            "sex": 0,
             "capital-gain": 0,
             "capital-loss": 0,
             "hours-per-week": 35
