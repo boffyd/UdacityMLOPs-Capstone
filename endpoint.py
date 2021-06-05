@@ -9,7 +9,7 @@ scoring_uri = 'http://a32db088-5669-4c6d-8ed6-09c8eac8a3af.southcentralus.azurec
 key = 'DTZ5maZzybrVdf6N4Nj1LvUaLHe9mUw0'
 
 # Endpoint.py is used to pass new data to the scoring uri as defined by the deployed model.  
-#The format has to be in the format (wrangled,pipeline) as per the orignal model input
+# The format has to be in the format (wrangled,pipeline) as per the orignal model input
 # Two sets of data to score, so we get two results back
 
 # in the case of this dataset the original file included passing it through clean data, and the finalised clean data
