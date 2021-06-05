@@ -1,26 +1,26 @@
-2021/06/05 04:54:26 Starting App Insight Logger for task:  runTaskLet
-2021/06/05 04:54:26 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/info
-2021/06/05 04:54:26 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
-[2021-06-05T04:54:26.804914] Entering context manager injector.
-[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--learning_rate', '1', '--max_depth', '2'])
+2021/06/05 05:32:29 Starting App Insight Logger for task:  runTaskLet
+2021/06/05 05:32:29 Attempt 1 of http call to http://10.0.0.8:16384/sendlogstoartifacts/info
+2021/06/05 05:32:29 Attempt 1 of http call to http://10.0.0.8:16384/sendlogstoartifacts/status
+[2021-06-05T05:32:29.882029] Entering context manager injector.
+[context_manager_injector.py] Command line Options: Namespace(inject=['ProjectPythonPath:context_managers.ProjectPythonPath', 'RunHistory:context_managers.RunHistory', 'TrackUserError:context_managers.TrackUserError'], invocation=['train.py', '--learning_rate', '1', '--max_depth', '5'])
 Script type = None
-[2021-06-05T04:54:28.403878] Entering Run History Context Manager.
-[2021-06-05T04:54:29.001706] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146487/azureml/hd_7a190169-58d7-418c-a2e3-e94fef45af08_2/mounts/workspaceblobstore/azureml/HD_7a190169-58d7-418c-a2e3-e94fef45af08_2
-[2021-06-05T04:54:29.002095] Preparing to call script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '2']
-[2021-06-05T04:54:29.002148] After variable expansion, calling script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '2']
+[2021-06-05T05:32:31.219189] Entering Run History Context Manager.
+[2021-06-05T05:32:31.815376] Current directory: /mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146487/azureml/hd_6633f9e8-794c-47cc-955a-a21d7ae75875_2/mounts/workspaceblobstore/azureml/HD_6633f9e8-794c-47cc-955a-a21d7ae75875_2
+[2021-06-05T05:32:31.815678] Preparing to call script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '5']
+[2021-06-05T05:32:31.815729] After variable expansion, calling script [train.py] with arguments:['--learning_rate', '1', '--max_depth', '5']
 
-2021/06/05 04:54:31 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+2021/06/05 05:32:34 Not exporting to RunHistory as the exporter is either stopped or there is no data.
 Stopped: false
 OriginalData: 1
 FilteredData: 0.
 Performing interactive authentication. Please follow the instructions on the terminal.
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code AV4KL2MSF to authenticate.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code RHE4UHVVJ to authenticate.
 
 
-[2021-06-05T05:09:48.325111] The experiment failed. Finalizing run...
+[2021-06-05T05:47:50.781323] The experiment failed. Finalizing run...
 Cleaning up all outstanding Run operations, waiting 900.0 seconds
 2 items cleaning up...
-Cleanup took 0.13521051406860352 seconds
+Cleanup took 0.14375567436218262 seconds
 Traceback (most recent call last):
   File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/_base_sdk_common/common.py", line 579, in perform_interactive_login
     use_cert_sn_issuer=use_cert_sn_issuer)
@@ -43,7 +43,7 @@ adal.adal_error.AdalError: Unexpected polling state code_expired
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146487/azureml/hd_7a190169-58d7-418c-a2e3-e94fef45af08_2/mounts/workspaceblobstore/azureml/HD_7a190169-58d7-418c-a2e3-e94fef45af08_2/azureml-setup/context_manager_injector.py", line 234, in execute_with_context
+  File "/mnt/batch/tasks/shared/LS_root/jobs/quick-starts-ws-146487/azureml/hd_6633f9e8-794c-47cc-955a-a21d7ae75875_2/mounts/workspaceblobstore/azureml/HD_6633f9e8-794c-47cc-955a-a21d7ae75875_2/azureml-setup/context_manager_injector.py", line 234, in execute_with_context
     runpy.run_path(sys.argv[0], globals(), run_name="__main__")
   File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/runpy.py", line 263, in run_path
     pkg_name=pkg_name, script_name=fname)
@@ -51,7 +51,7 @@ Traceback (most recent call last):
     mod_name, mod_spec, pkg_name, script_name)
   File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/runpy.py", line 85, in _run_code
     exec(code, run_globals)
-  File "train.py", line 64, in <module>
+  File "train.py", line 67, in <module>
     workspace = Workspace(subscription_id, resource_group, workspace_name)
   File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/core/workspace.py", line 193, in __init__
     auth = InteractiveLoginAuthentication()
@@ -76,7 +76,7 @@ azureml.exceptions._azureml_exception.AuthenticationException: AuthenticationExc
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "train.py", line 64, in <module>
+  File "train.py", line 67, in <module>
     workspace = Workspace(subscription_id, resource_group, workspace_name)
   File "/azureml-envs/azureml_44f1241e3ccd0f6de5ee1844e02db28c/lib/python3.6/site-packages/azureml/core/workspace.py", line 193, in __init__
     auth = InteractiveLoginAuthentication()
@@ -107,18 +107,18 @@ UserScriptException: UserScriptException:
     }
 }
 
-[2021-06-05T05:09:48.696011] Finished context manager injector with Exception.
-2021/06/05 05:09:49 Skipping parsing control script error. Reason: Error json file doesn't exist. This most likely means that no errors were written to the file. File path: /mnt/batch/tasks/workitems/c471dc10-5bdf-4efa-b993-41be9fcbf57e/job-1/hd_7a190169-58d7-418_92984318-6335-4b2c-85a4-ea5cb8a26590/wd/runTaskLetTask_error.json
-2021/06/05 05:09:49 Failed to run the wrapper cmd with err: exit status 1
-2021/06/05 05:09:49 Attempt 1 of http call to http://10.0.0.7:16384/sendlogstoartifacts/status
-2021/06/05 05:09:49 mpirun version string: {
+[2021-06-05T05:47:51.133803] Finished context manager injector with Exception.
+2021/06/05 05:47:52 Skipping parsing control script error. Reason: Error json file doesn't exist. This most likely means that no errors were written to the file. File path: /mnt/batch/tasks/workitems/c471dc10-5bdf-4efa-b993-41be9fcbf57e/job-1/hd_6633f9e8-794c-47c_551f4eed-aa2c-4fc1-9a6d-e96d198d9437/wd/runTaskLetTask_error.json
+2021/06/05 05:47:52 Failed to run the wrapper cmd with err: exit status 1
+2021/06/05 05:47:52 Attempt 1 of http call to http://10.0.0.8:16384/sendlogstoartifacts/status
+2021/06/05 05:47:52 mpirun version string: {
 Intel(R) MPI Library for Linux* OS, Version 2018 Update 3 Build 20180411 (id: 18329)
 Copyright 2003-2018 Intel Corporation.
 }
-2021/06/05 05:09:49 MPI publisher: intel ; version: 2018
-2021/06/05 05:09:49 Not exporting to RunHistory as the exporter is either stopped or there is no data.
+2021/06/05 05:47:52 MPI publisher: intel ; version: 2018
+2021/06/05 05:47:52 Not exporting to RunHistory as the exporter is either stopped or there is no data.
 Stopped: false
 OriginalData: 2
 FilteredData: 0.
-2021/06/05 05:09:49 Process Exiting with Code:  1
-2021/06/05 05:09:50 All App Insights Logs was send successfully
+2021/06/05 05:47:52 Process Exiting with Code:  1
+2021/06/05 05:47:53 All App Insights Logs was send successfully
