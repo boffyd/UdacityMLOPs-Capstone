@@ -92,21 +92,26 @@ AutoML is a vast tool that if left unchecked can consume a lot of resources.  Pr
 The AutoML Project Was completed.
 
 ![diagram](Images/01-AutoMLComplete.png)
+
 AUTOML COMPLETE
 
 The best performing model was voting ensemble with an accuracy of 0.86997.  Defining the parameters used for this results in a combination of many models.  These can be seen below.
 
 ![diagram](Images/01-AutoMLWidget.png)
+
 AUTOML WIDGET
 
 ![diagram](Images/01-AutoMLWidgetAccuracy.png)
+
 MODEL ACCURACY
 
 
 ![diagram](Images/01-AutoMLModels.png)
+
 MODEL OUTCOME
 
 ![diagram](Images/AutoMLBestRunParameters.png)
+
 BEST MODEL PARAMETERS
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
@@ -124,9 +129,11 @@ Learning Rate - This is a weighting factor that can be applied to the boosting m
 Primary Metric is Accuracy.
 
 ![diagram](Images/05HDwidget1.png)
+
 HYPERDRIVE WIDGET
 
 ![diagram](Images/05HDwidget2.png)
+
 HYPERDRIVE WIDGET
 
 
@@ -204,4 +211,7 @@ https://youtu.be/_88sGzycrTU
 
 ## Standout Suggestions
 The automl was converted to ONNX fomrat.
+![diagram](Images/ONNX.png)
+
+ONNX MODEL OUTPUT
 
