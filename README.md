@@ -89,7 +89,25 @@ AutoML is a vast tool that if left unchecked can consume a lot of resources.  Pr
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
+The AutoML Project Was completed.
+
+![diagram](images/01-AutoMLComplete.png)
+AUTOML COMPLETE
+
 The best performing model was voting ensemble with an accuracy of 0.86997.  Defining the parameters used for this results in a combination of many models.  These can be seen below.
+
+![diagram](images/01-AutoMLWidget.png)
+AUTOML WIDGET
+
+![diagram](images/01-AutoMLWidgetAccuracy.png)
+MODEL ACCURACY
+
+
+![diagram](images/01-AutoMLModels.png)
+MODEL OUTCOME
+
+![diagram](images/AutoMLBestRunParameters.png)
+BEST MODEL PARAMETERS
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
@@ -105,6 +123,13 @@ Learning Rate - This is a weighting factor that can be applied to the boosting m
 
 Primary Metric is Accuracy.
 
+![diagram](images/xxxxx.png)
+HYPERDRIVE WIDGET
+
+![diagram](images/xxxxx.png)
+HYPERDRIVE WIDGET
+
+
 
 ### Results
 
@@ -112,6 +137,9 @@ The best run metrics where
 Accuracy 0.869
 Max Depth 2
 Learning Rate 1
+
+![diagram](images/02-HyperdriveBestModel.png)
+BEST MODEL PARAMETERS
 
 The results where similar to the AutoML, better ways to improve this might be to go to a grid search, include more variables including the number of estimators.
 
