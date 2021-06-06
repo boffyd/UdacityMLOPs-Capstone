@@ -89,7 +89,7 @@ AutoML is a vast tool that if left unchecked can consume a lot of resources.  Pr
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
-The best performing model was voting ensemble with an accuracy of 
+The best performing model was voting ensemble with an accuracy of 0.86997.
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
