@@ -91,22 +91,22 @@ AutoML is a vast tool that if left unchecked can consume a lot of resources.  Pr
 
 The AutoML Project Was completed.
 
-![diagram](images/01-AutoMLComplete.png)
+![diagram](Images/01-AutoMLComplete.png)
 AUTOML COMPLETE
 
 The best performing model was voting ensemble with an accuracy of 0.86997.  Defining the parameters used for this results in a combination of many models.  These can be seen below.
 
-![diagram](images/01-AutoMLWidget.png)
+![diagram](Images/01-AutoMLWidget.png)
 AUTOML WIDGET
 
-![diagram](images/01-AutoMLWidgetAccuracy.png)
+![diagram](Images/01-AutoMLWidgetAccuracy.png)
 MODEL ACCURACY
 
 
-![diagram](images/01-AutoMLModels.png)
+![diagram](Images/01-AutoMLModels.png)
 MODEL OUTCOME
 
-![diagram](images/AutoMLBestRunParameters.png)
+![diagram](Images/AutoMLBestRunParameters.png)
 BEST MODEL PARAMETERS
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
@@ -123,10 +123,10 @@ Learning Rate - This is a weighting factor that can be applied to the boosting m
 
 Primary Metric is Accuracy.
 
-![diagram](images/xxxxx.png)
+![diagram](Images/05HDwidget1.png)
 HYPERDRIVE WIDGET
 
-![diagram](images/xxxxx.png)
+![diagram](Images/05HDwidget2.png)
 HYPERDRIVE WIDGET
 
 
@@ -163,7 +163,28 @@ Changing the primary metric, AUC is also used for classification (for example).
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
 
-The model was deployed through the Azure Machine Learning services.  The AutoML model was the best performing, with VotingEnsemble.  This was then selected for deployment.  Once deployed with Container Instances it then provides a Scoring URI that can be access including authentication keys.  From here the inputs were verified through swagger and several test units were passed to the active endpoint.
+The model was deployed through the Azure Machine Learning services.  The AutoML model was the best performing, with VotingEnsemble.  This was then selected for deployment.  Once deployed with Container Instances it then provides a Scoring URI that can be access including authentication keys.  From here the inputs were verified through swagger and several test units were passed to the active endpoint.  Refer to the below images.
+
+![diagram](images/03-ModelEndpointActive.png)
+ENDPOINT ACTIVE
+
+![diagram](images/03-ModelEndpointActive2.png)
+ENDPOINT ACTIVE
+
+![diagram](images/04-Swagger.png)
+SWAGGER
+
+![diagram](images/AutoMLTest.png)
+ENDPOINT TEST
+
+![diagram](images/06request1.png)
+ENDPOINT TEST
+
+![diagram](images/06request2.png)
+ENDPOINT TEST
+
+![diagram](images/06request3.png)
+ENDPOINT TEST
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
@@ -172,4 +193,5 @@ The model was deployed through the Azure Machine Learning services.  The AutoML 
 - Demo of a sample request sent to the endpoint and its response
 
 ## Standout Suggestions
-*TODO (Optional):* This is where you can provide information about any standout suggestions that you have attempted.
+The automl was converted to ONNX fomrat.
+
