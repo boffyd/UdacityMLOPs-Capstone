@@ -1,0 +1,6 @@
+2021-06-06 09:45:38.518 - INFO - 4492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-06-06 09:45:38.543 - INFO - 4492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetOutput
+2021-06-06 09:45:38.561 - INFO - 4492 - azureml.train.automl.run._log_activity:55 - ActivityStarted: GetChildren
+2021-06-06 09:46:45.578 - INFO - 4492 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=67017.28[ms]
+2021-06-06 09:46:45.683 - INFO - 4492 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=67140.77[ms]
+2021-06-06 09:46:46.115 - INFO - 4492 - azureml.train.automl.run._log_activity:93 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=67597.17[ms]
