@@ -21,7 +21,7 @@ The dataset explored for this project is the Adult dataset, which is a banking c
 https://archive.ics.uci.edu/ml/datasets/Adult
 
 
-The variables are: 
+The variables are shown below: 
 
 Variable |Datatype|Description
 -|-|-
