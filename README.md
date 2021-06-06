@@ -50,20 +50,42 @@ The primary task with this model is classification where we are attempting to pr
 To access the data, I downloaded the data and uploaded the csv into my github link.  I created two methods for accessing the data.
 1. Load the CSV into the datastores, and provide access to it through
 run = Run.get_context()
+
 ws = run.experiment.workspace
+
 dataset = Dataset.get_by_name(workspace, name='Adult')
+
 ds = dataset.to_pandas_dataframe()
 
 2. Alternatively access this through URL 
 'url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult.csv'
 dataset = TabularDatasetFactory.from_delimited_files(url,header = False)
+
 ds = dataset.to_pandas_dataframe()
 
 For AutoML you don't pass pandas dataframes to the AutoML config, these need to remain as Tabular Datasets within the AzureML Environment.
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
-Several columns where dropped
+
+
+AutoML is a vast tool that if left unchecked can consume a lot of resources.  Primarily as per previous assignments alot of the settings where used to spare compute resources including experiment timeout of 30 minutes.  The settings are shown below.  Possible changes could be to the primary metric, this was left to be consistent with the training script created for hyperdrive.  Another time saver that could of improved the output was the number of cross validations, where 3 was chosen.
+
+    experiment_timeout_minutes = 30,
+
+    primary_metric = 'accuracy'
+    
+    n_cross_validations = 3, #typically 5, used to make time go quicker.
+    
+    task = 'classification',
+    
+    training_data = tabular_dataset,
+    
+    debug_log = 'automl_errors.log',
+    
+    label_column_name = 'wage',
+    
+    enable_onnx_compatible_models = True
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
@@ -72,6 +94,7 @@ Several columns where dropped
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+This allows us to select a particular machine learning method.  For this project I chose XGBoostClassifier because it is quite robust, is a gradient boosting ensemble classification algorithm.  There are a multitude of hyperparameters that can be used.
 
 
 ### Results
