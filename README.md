@@ -68,7 +68,6 @@ For AutoML you don't pass pandas dataframes to the AutoML config, these need to 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
-
 AutoML is a vast tool that if left unchecked can consume a lot of resources.  Primarily as per previous assignments alot of the settings where used to spare compute resources including experiment timeout of 30 minutes.  The settings are shown below.  Possible changes could be to the primary metric, this was left to be consistent with the training script created for hyperdrive.  Another time saver that could of improved the output was the number of cross validations, where 3 was chosen.
 
     experiment_timeout_minutes = 30,
@@ -90,20 +89,52 @@ AutoML is a vast tool that if left unchecked can consume a lot of resources.  Pr
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
 
+The best performing model was voting ensemble with an accuracy of 
+
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Hyperparameter Tuning
 *TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
-This allows us to select a particular machine learning method.  For this project I chose XGBoostClassifier because it is quite robust, is a gradient boosting ensemble classification algorithm.  There are a multitude of hyperparameters that can be used.
+
+For this project I chose XGBoostClassifier because it is quite robust, its a gradient boosting ensemble classification algorithm.  There are a multitude of hyperparameters that can be used.
+
+To limit the compute resources I have chose
+Max Depth - This defines the number of trees that can selected for each estimater.  Larger numbers can lead more to overfitting, so for this experiment the field has been set relatively low.
+
+Learning Rate - This is a weighting factor that can be applied to the boosting model.
+
+Primary Metric is Accuracy.
 
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+
+The best run metrics where
+Accuracy 0.869
+Max Depth 2
+Learning Rate 1
+
+The results where similar to the AutoML, better ways to improve this might be to go to a grid search, include more variables including the number of estimators.
+
+For example, 
+
+max depth could be changed to be 2, 5 and 10
+
+learning rate, could be changed to 0.1, 0.5, 1, 2
+
+add additional hyperparameters (which will consume more resources)
+
+Other improvements would be additional pre-processing including
+1. Change the the training script to provide a different encoding method,
+2. More work on data leakage, feature engineering and dropping correlated variables
+
+Changing the primary metric, AUC is also used for classification (for example).
+
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+
 
 ## Screen Recording
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
