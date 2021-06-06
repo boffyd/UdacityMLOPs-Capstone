@@ -166,27 +166,37 @@ Changing the primary metric, AUC is also used for classification (for example).
 The model was deployed through the Azure Machine Learning services.  The AutoML model was the best performing, with VotingEnsemble.  This was then selected for deployment.  Once deployed with Container Instances it then provides a Scoring URI that can be access including authentication keys.  From here the inputs were verified through swagger and several test units were passed to the active endpoint.  Refer to the below images.
 
 ![diagram](Images/03-ModelEndpointActive.png)
+
 ENDPOINT ACTIVE
 
 ![diagram](Images/03-ModelEndpointActive2.png)
+
 ENDPOINT ACTIVE
 
 ![diagram](Images/04-Swagger.png)
+
 SWAGGER
 
 ![diagram](Images/AutoMLTest.png)
+
 ENDPOINT TEST
 
 ![diagram](Images/06request1.png)
+
 ENDPOINT TEST
 
 ![diagram](Images/06request2.png)
+
 ENDPOINT TEST
 
 ![diagram](Images/06request3.png)
+
 ENDPOINT TEST
 
 ## Screen Recording
+
+https://youtu.be/_88sGzycrTU 
+
 *TODO* Provide a link to a screen recording of the project in action. Remember that the screencast should demonstrate:
 - A working model
 - Demo of the deployed  model
