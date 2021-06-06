@@ -5,6 +5,14 @@ This is the capstone project for the Azure Machine Learning Engineer where we pu
 ## Project Set Up and Installation
 Firstly to run models and environments in Azure you need a login.  In this case the UDACITY VM access point is used with a predifined login and access to compute resources.
 
+From the login the basic steps involved are
+
+1. Upload or provide URL access to the dataset
+2. Run the AutoML notebook, here the dataset is run through the AutoML config based on parameter setups as appointed in the Python SDK (notebook).  Once the experiment is complete, the children runs are compared for the best model.
+3. Run the Hyperdrive notebook.  This includes udpating a train.py script to allow access to the dataset, either locally or through a URL and provide any preprocessing steps.  Hyperdrive allows the use of pytorch, tensorflow and Sckit learn packages which enables the use of typical Python learning algoritms.  The train script includes suitable preprocessing steps as required to pass to the model.  The model also includes several parameters that allow passing to the hyperdrive portion of the script run config.  This allows the Machine Learner to optimise a chosen model and ideally improve the results.
+4. Compare the two experiments and deploy the best model.
+5. Access the scoring UI to test the endpoint i.e. put new data through the model.
+
 ## Dataset
 
 ### Overview
@@ -33,17 +41,29 @@ hours-per-week|Numerical
 native-country|Object|Country Born
 wage-outcome|Object|Outcome, dependent variable
 
-https://www.kaggle.com/andrewmvd/heart-failure-clinical-data 
-
+https://archive.ics.uci.edu/ml/datasets/Adult
 
 ### Task
-*TODO*: Explain the task you are going to be solving with this dataset and the features you will be using for it.
+The primary task with this model is classification where we are attempting to predict whether or not someone is likely to earn more or less than 50k.
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+To access the data, I downloaded the data and uploaded the csv into my github link.  I created two methods for accessing the data.
+1. Load the CSV into the datastores, and provide access to it through
+run = Run.get_context()
+ws = run.experiment.workspace
+dataset = Dataset.get_by_name(workspace, name='Adult')
+ds = dataset.to_pandas_dataframe()
+
+2. Alternatively access this through URL 
+'url = 'https://raw.githubusercontent.com/boffyd/UdacityMLOPs-Capstone/main/adult.csv'
+dataset = TabularDatasetFactory.from_delimited_files(url,header = False)
+ds = dataset.to_pandas_dataframe()
+
+For AutoML you don't pass pandas dataframes to the AutoML config, these need to remain as Tabular Datasets within the AzureML Environment.
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
+Several columns where dropped
 
 ### Results
 *TODO*: What are the results you got with your automated ML model? What were the parameters of the model? How could you have improved it?
