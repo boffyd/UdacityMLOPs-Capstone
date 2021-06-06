@@ -138,7 +138,7 @@ Accuracy 0.869
 Max Depth 2
 Learning Rate 1
 
-![diagram](images/02-HyperdriveBestModel.png)
+![diagram](Images/02-HyperdriveBestModel.png)
 BEST MODEL PARAMETERS
 
 The results where similar to the AutoML, better ways to improve this might be to go to a grid search, include more variables including the number of estimators.
@@ -165,25 +165,25 @@ Changing the primary metric, AUC is also used for classification (for example).
 
 The model was deployed through the Azure Machine Learning services.  The AutoML model was the best performing, with VotingEnsemble.  This was then selected for deployment.  Once deployed with Container Instances it then provides a Scoring URI that can be access including authentication keys.  From here the inputs were verified through swagger and several test units were passed to the active endpoint.  Refer to the below images.
 
-![diagram](images/03-ModelEndpointActive.png)
+![diagram](Images/03-ModelEndpointActive.png)
 ENDPOINT ACTIVE
 
-![diagram](images/03-ModelEndpointActive2.png)
+![diagram](Images/03-ModelEndpointActive2.png)
 ENDPOINT ACTIVE
 
-![diagram](images/04-Swagger.png)
+![diagram](Images/04-Swagger.png)
 SWAGGER
 
-![diagram](images/AutoMLTest.png)
+![diagram](Images/AutoMLTest.png)
 ENDPOINT TEST
 
-![diagram](images/06request1.png)
+![diagram](Images/06request1.png)
 ENDPOINT TEST
 
-![diagram](images/06request2.png)
+![diagram](Images/06request2.png)
 ENDPOINT TEST
 
-![diagram](images/06request3.png)
+![diagram](Images/06request3.png)
 ENDPOINT TEST
 
 ## Screen Recording
