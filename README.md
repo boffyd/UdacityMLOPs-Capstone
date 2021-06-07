@@ -105,7 +105,6 @@ AUTOML WIDGET
 
 MODEL ACCURACY
 
-
 ![diagram](Images/01-AutoMLModels.png)
 
 MODEL OUTCOME
@@ -113,6 +112,9 @@ MODEL OUTCOME
 ![diagram](Images/AutoMLBestRunParameters.png)
 
 BEST MODEL PARAMETERS
+
+![diagram](Images/07modelregister.png)
+REGISTERED MODEL
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
@@ -199,6 +201,7 @@ ENDPOINT TEST
 ![diagram](Images/06request3.png)
 
 ENDPOINT TEST
+
 
 ## Screen Recording
 
