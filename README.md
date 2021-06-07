@@ -114,6 +114,7 @@ MODEL OUTCOME
 BEST MODEL PARAMETERS
 
 ![diagram](Images/07modelregister.png)
+
 REGISTERED MODEL
 
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
