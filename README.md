@@ -117,6 +117,14 @@ BEST MODEL PARAMETERS
 
 REGISTERED MODEL
 
+![diagram](Images/09MLRun.png)
+
+AUTOML RUN 1623058824 COMPLETED, REGISTERD MODEL IDENTIFIED
+
+![diagram](Images/09BestModelDeployRegister.png.png)
+
+REGISTERED MODEL AND RUN ID, DEPLOYMENT SUCCESSFUL
+
 *TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Hyperparameter Tuning
